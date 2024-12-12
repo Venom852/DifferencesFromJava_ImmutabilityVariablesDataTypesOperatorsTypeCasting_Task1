@@ -1,9 +1,10 @@
 package ru.netology
 
-fun main () {
+import kotlin.math.roundToInt
+
+fun main() {
     val amount = 14654
-    val minimumCommission = 35
-    val commission = amount * 0.0075 + minimumCommission
+    val commission = if (amount * 0.0075 > 35) (amount * 0.0075).roundToInt() else 35
 
     println("Комиссия составляет $commission руб.")
 }
